@@ -3,6 +3,8 @@ import './Home.css';
 import { Link } from 'react-router-dom';
 import AppsIcon from '@mui/icons-material/Apps';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import Search from './Search';
+
 function Home() {
 	return (
 		<div className="home">
@@ -27,7 +29,15 @@ function Home() {
 					{/*avatar  */}
 				</div>
 			</div>
-			<div className="home__body"></div>
+			<div className="home__body">
+				<img
+					src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png"
+					alt=""
+				/>
+				<div className="home__inputContainer">
+					<Search />
+				</div>
+			</div>
 		</div>
 	);
 }
