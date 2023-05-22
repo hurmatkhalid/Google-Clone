@@ -4,10 +4,11 @@ import SearchSharpIcon from '@mui/icons-material/SearchSharp';
 import MicSharpIcon from '@mui/icons-material/MicSharp';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import { useStateValue } from './StateProvider';
-import { actionTypes } from './reducer';
+import { useStateValue } from '../StateProvider';
+import { actionTypes } from '../reducer';
 
 function Search({ hideButtons = false }) {
+	// eslint-disable-next-line no-empty-pattern
 	const [{}, dispatch] = useStateValue();
 
 	const [input, setInput] = useState(''); //this is state, thats how we write variables
