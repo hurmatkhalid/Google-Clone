@@ -4,14 +4,26 @@ import SearchSharpIcon from '@mui/icons-material/SearchSharp';
 import MicSharpIcon from '@mui/icons-material/MicSharp';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { useStateValue } from './StateProvider';
+import { actionTypes } from './reducer';
 
 function Search({ hideButtons = false }) {
+	const [{}, dispatch] = useStateValue();
+
 	const [input, setInput] = useState(''); //this is state, thats how we write variables
 	const navigate = useNavigate();
+
 	const search = (e) => {
 		e.preventDefault(); //this so it prevents refresh
+
+		dispatch({
+			type: actionTypes.SET_SEARCH_TERM,
+			term: input,
+		});
+
 		navigate('/search');
 	};
+
 	return (
 		<form className="search">
 			{/*we used form instead of div, and then in button do type='submit' it will make your enter key submit the input hehe */}
